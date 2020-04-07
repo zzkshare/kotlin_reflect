@@ -3,6 +3,7 @@ package top.zzkshare.reflectlib
 import org.junit.Test
 
 import org.junit.Assert.*
+import top.zzkshare.reflectlib.reflectUtil.JavaReflectMethod
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,6 +13,7 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
+        JavaReflectMethod().getAllConstructor()
         assertEquals(4, 2 + 2)
     }
 }

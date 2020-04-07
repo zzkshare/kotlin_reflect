@@ -18,13 +18,14 @@ public class JavaReflectMethod {
             Constructor[] constructors = cls.getDeclaredConstructors();
             for (Constructor ctor : constructors){
                 int mod = ctor.getModifiers();
-                Log("修饰域？:"+ Modifier.toString(mod));
-
+                String strMod = Modifier.toString(mod)+" : ";
                 // 获取参数类型
                 Class[] paramTypes = ctor.getParameterTypes();
                 for (Class param : paramTypes){
-                    Log(param.getName()+" ");
+                    strMod += param.getName() + " ";
+//                    Log(param.getName()+" ");
                 }
+                Log(strMod);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -32,5 +33,8 @@ public class JavaReflectMethod {
     }
 
     private static final String TAG = "JavaReflectMethod";
-    private static void Log(String log) {android.util.Log.d(TAG, log);}
+    private static void Log(String log) {
+//        android.util.Log.d(TAG, log);
+        System.out.println(log);
+    }
 }
