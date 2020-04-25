@@ -14,6 +14,7 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         JavaReflectMethod().getAllConstructor()
+        JavaReflectMethod().evalConstructor()
         assertEquals(4, 2 + 2)
     }
 }

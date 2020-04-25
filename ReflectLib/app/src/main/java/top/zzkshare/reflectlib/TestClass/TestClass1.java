@@ -1,10 +1,14 @@
 package top.zzkshare.reflectlib.TestClass;
 
+import android.util.Log;
+
+import top.zzkshare.reflectlib.Util.LogUtil;
+
 public class TestClass1 {
     public String mStr;
     public static String mStaticStr = "hello_reflect";
     private Float mPriFloat;
-    private Integer mStaticPriInt = 1;
+    private static Integer mStaticPriInt = 176971;
 
     public TestClass1() {
     }
@@ -12,7 +16,17 @@ public class TestClass1 {
     public TestClass1(String mStr, Float mPriFloat, Integer mStaticPriInt) {
         this.mStr = mStr;
         this.mPriFloat = mPriFloat;
-        this.mStaticPriInt = mStaticPriInt;
+    }
+
+    private TestClass1(String mStr) {
+        this.mStr = mStr;
+        LogUtil.log("testClass private constructor with param: "+mStr);
+    }
+
+    private Integer thisIsAPersonalMethod(String mStr) {
+        LogUtil.log(mStr);
+        LogUtil.log("testClass private method with return: "+mStaticPriInt);
+        return mStaticPriInt;
     }
 
     public String getmStr() {
@@ -23,7 +37,7 @@ public class TestClass1 {
         this.mStr = mStr;
     }
 
-    public static String getmStaticStr() {
+    private static String getmStaticStr() {
         return mStaticStr;
     }
 
